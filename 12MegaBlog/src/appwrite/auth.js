@@ -28,17 +28,20 @@ export  class AuthService {
 
     async login({email, password}){
         try {
-            return await account.createEmailToken(email, password);
+            await this.account.createEmailPasswordSession(email, password);
+            console.log("User logged in successfully");
         } catch (error) {
-            throw error;
+            console.log("Login failed:", error);
         }
     }
 
     async  getCurrentUser() {
         try {
-          return await this.account.get();  
+            console.log('called get user');
+            const user = await this.account.get();  
+            return user;
         } catch (error) {
-            console.log("Appwrite serive :: getCurrentUser :: error", error);
+            console.log("Appwrite service :: getCurrentUser :: error", error);
         }
         return null;
     }

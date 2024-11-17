@@ -55,9 +55,9 @@ function Signup() {
                     label="Full Name: "
                     type="text"
                     placeholder= "Enter your name"
-                    {...register("name"), {
+                    {...register("name", {
                         required: true
-                    }}
+                    })}
                 />
                 <Input 
                     label="Email: "
@@ -79,10 +79,10 @@ function Signup() {
                         required: true
                     })}
                 />
-                <button
+                <Button
                     type="submit"
                     className="w-full"
-                >Create Account</button>
+                >Create Account</Button>
             </div>
         </form>
       </div>

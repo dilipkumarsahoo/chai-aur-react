@@ -70,10 +70,10 @@ function Login() {
                   required: true
                 })}
               />
-              <button
+              <Button
                 type='submit'
                 className='w-full'
-              >Login</button>
+              >Login</Button>
             </div>
           </form>
 
